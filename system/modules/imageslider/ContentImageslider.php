@@ -388,7 +388,7 @@ window.addEvent('domready',function()
 	  * -------------------------------------------------------------------- */
 		$this->Template->id = $objSettings->id;
 		$this->Template->elements = $arrElements;
-		
+		$this->Template->imageslider_size = $arrImageslider;
 	}
 
 /*----- Function helper  -----------------------------------------------------------------*/
