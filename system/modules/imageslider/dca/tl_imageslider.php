@@ -258,7 +258,7 @@ class tl_imageslider extends Backend
 		$objElements = $this->Database->prepare("SELECT * FROM tl_imageslider_elements WHERE pid=? ORDER by sorting ASC")
 					   ->execute($arrRow['id']);
 					   
-					   
+		$arrElements = array();	   
 		if ($objElements->numRows > 0)
 		{
 			while ($objElements->next())
@@ -282,8 +282,7 @@ class tl_imageslider extends Backend
 						$objFile = new File($objElements->src . '/' . $subfile);
 						if ($objFile->isGdImage)
 						{
-							$arrElements[$x]['src'] = $this->getImage($objElements->src . '/' . $subfile, 100, 50);
-							$x++;
+							$arrElements[]['src'] = $this->getImage($objElements->src . '/' . $subfile, 100, 50);
 						}
 					}
 					continue;
@@ -295,8 +294,7 @@ class tl_imageslider extends Backend
 					$objFile = new File($objElements->src);
 					if ($objFile->isGdImage)
 					{
-						$arrElements[$x]['src'] = $this->getImage($objElements->src, 100, 50);
-						$x++;
+						$arrElements[]['src'] = $this->getImage($objElements->src, 100, 50);
 					}
 				}
 	
